@@ -1,44 +1,21 @@
 <?php
 
-class Genre{
-    public $genere;
-    public $vietatoAiMinori;
+require_once "./Traits/hasRating.php";
 
-    public function __construct($_genere, $_vietatoAiMinori)
-    {
-        $this->genere = $_genere;
-        $this->vietatoAiMinori = $_vietatoAiMinori;
-    }
-}
+require_once "./Models/Genre.php";
+require_once "./Models/Movie.php";
 
-class Movie
-{
-    public $titolo;
-    public $regista;
-    public $genere;
-    protected $anno;
-
-    public function getAnno()
-    {
-        return "L'anno di pubblicazione è il " . $this->anno;
-    }
-
-    public function getInfo(){
-        return "Il titolo del film è " . $this->titolo . ", è stato diretto da " . $this->regista . " e l'anno di pubblicazione è il " . $this->anno;
-    }
-
-    public function __construct($_titolo, $_regista, $_anno, Genre $genere)
-    {
-        $this->titolo = $_titolo;
-        $this->regista = $_regista;
-        $this->anno = $_anno;
-    }
-}
-
-
-$film1 = new Movie("2001: Odissea nello spazio", "Stanley Kubrick", 1968, new Genre("Fantascienza", false));
-$film2 = new Movie("Ex Machina", "Alex Garland", 2015, new Genre("Thriller", false));
+$film1 = new Movie("2001: Odissea nello spazio", "Stanley Kubrick", 1968, new Genre("Fantascienza"));
+$film2 = new Movie("Ex Machina", "Alex Garland", 2015, new Genre("Thriller"));
 
 echo $film1->getInfo();
 echo "<br>";
+echo "<br>";
 echo $film2->getInfo();
+echo "<br>";
+echo "<br>";
+
+$film1->setRating(9);
+echo $film1->getRating();
+
+var_dump($film1);
