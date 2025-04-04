@@ -14,6 +14,7 @@
 <body>
     <div class="container">
         <h1 class="mt-4">Lista di Film</h1>
+        <hr>
         <div class="row row-cols-md-2 g-5 mt-1 mb-5">
             <?php
             foreach ($movies as $movie) {
