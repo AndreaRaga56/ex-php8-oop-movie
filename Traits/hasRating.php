@@ -1,7 +1,7 @@
 <?php
 trait HasRating
 {
-    private $rating = "Voto non ancora inserito";
+    private $rating = "Non ancora inserito";
 
     public function setRating($a)
     {

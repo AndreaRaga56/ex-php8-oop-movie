@@ -10,7 +10,7 @@ class Movie
 
     public function getAnno()
     {
-        return "L'anno di pubblicazione è il " . $this->anno;
+        return $this->anno;
     }
 
     public function getInfo(){
